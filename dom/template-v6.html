@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+    <p v-html="linkHTML"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            link: 'https://google.com.br',
+            linkHTML: '<a href="https://google.com.br">Google HTML</a>'
+        },
+        methods: {
+            saudacao: function () {
+                this.titulo = "Bom dia !!"
+                return this.titulo
+            }
+        }
+    })
+</script>
+
+<!-- v-html permite que o conteudo heml adicionado via Vue seja renderizado -->
