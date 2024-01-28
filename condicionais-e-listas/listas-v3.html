@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, index) in cores" :teste="cor">{{index + 1}}) {{cor}}</li>
+    </ul>
+    <template v-for="(cor, index) in cores">
+        <h1>{{cor}}</h1>
+        <p>{{index}}</p>
+    </template>
+    <hr>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'azul', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: "Maria", idade: 26, peso: 59 },
+                { nome: "Guilherme", idade: 34, peso: 87 },
+                { nome: "Alexander", idade: 30, peso: 90 },
+                { nome: "Júlia", idade: 25, peso: 70 }
+            ]
+        },
+        computed: {
+        }
+    })
+</script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+
+    h1,
+    p {
+        display: inline;
+    }
+</style>
+<!-- v-on incerceptar a função vinda do Vue -->

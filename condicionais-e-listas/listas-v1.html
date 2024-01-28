@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="cor in cores" :teste="cor">{{cor}}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'azul', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: "Maria", idade: 26, peso: 59 },
+                { nome: "Guilherme", idade: 34, peso: 87 },
+                { nome: "Alexander", idade: 30, peso: 90 },
+                { nome: "Júlia", idade: 25, peso: 70 }
+            ]
+        },
+        computed: {
+        }
+    })
+</script>
+
+<!-- v-on incerceptar a função vinda do Vue -->
