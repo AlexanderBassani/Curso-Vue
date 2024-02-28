@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+
+<div id="app">
+    <h1 ref="aulaRef">{{ aula }}</h1>
+    <h1>{{ aula }}</h1>
+    <h2>{{ modulo }}</h2>
+    <button @click="alterarAula">Alterar Aula</button>
+    <button @click="alterarModulo">Alterar Módulo</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            aula: 'Aula: Usando Refs',
+            modulo: 'Modulo: Instância Vue',
+        },
+        methods: {
+            alterarAula() {
+                this.aula += '#'
+            },
+            alterarModulo() {
+                this.modulo += '#'
+                console.log(vm.$refs.aulaRef.childNodes[0].data)
+            }
+        }
+    })
+    // vm.$refs.aulaRef.innerText = 'Alterando Diretamento :(' // não funciona do jeito esperado nessa versão do vue
+    vm.$refs.aulaRef.childNodes[0].data = 'Alterando Diretamento :('
+</script>
