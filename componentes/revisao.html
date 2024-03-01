@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<div id="app">
+    <contador></contador>
+    <contador></contador>
+    <contador></contador>
+    <contador></contador>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+    Vue.component('contador', {
+        template: `
+            <div>
+                {{contador}}
+                <button @click="contador+=1">+</button>
+                <button @click="contador+=1">+</button>
+            </div>
+        `,
+        data: function () {
+            return {
+                contador: 0
+            }
+        },
+    })
+
+    const vm = new Vue({
+        el: '#app',
+    })
+</script>
