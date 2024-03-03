@@ -16,8 +16,8 @@
             <!-- <app-usuario-info :nome="nome" @eventoMudou="nome = $event.novo + $event.antigo" :reiniciarFn="reiniciarNome"/> -->
             <app-usuario-editar 
             :idade="idade"
-            @idadeMudou="idade = $event"
-            :reiniciarIdadeFn="alterarIdade"/>
+            @idadeMudou="idade = $event" />
+            <!-- :reiniciarIdadeFn="alterarIdade"/> -->
         </div>
     </div>
 </template>

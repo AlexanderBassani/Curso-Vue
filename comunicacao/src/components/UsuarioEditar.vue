@@ -4,21 +4,28 @@
         <p>Edite as informações</p>
         <p>Idade do Usuário: <strong>{{ idade }}</strong></p>
         <button @click="alterarIdade">Alterar Idade</button>
-        <button @click="reiniciarIdadeFn">alterar Idade (callback)</button>
+        <!-- <button @click="reiniciarIdadeFn">alterar Idade (callback)</button> -->
     </div>
 </template>
 
 <script>
+import barramento from '@/barramento'
+
 export default {
     props:{
         idade: Number ,
-        reiniciarIdadeFn: Function
+        // reiniciarIdadeFn: Function
     },
     methods:{
         alterarIdade(){
-            // this.idade = 33
-            this.$emit('idadeMudou', 33)
+            const idade =  this.idade +1
+            barramento.alterarIdade(idade)
         }
+    },
+    created(){
+        barramento.quandoIdadeMudar( idade =>{
+            this.idade = idade
+        })
     }
 }
 </script>
